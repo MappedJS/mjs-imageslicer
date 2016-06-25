@@ -1,0 +1,30 @@
+{
+    "name": "mjs-imageslicer",
+    "author": {
+        "name": "Michael Duve"
+    },
+    "bugs": {
+        "url": "https://github.com/MappedJS/image-slicer/issues"
+    },
+    "dependencies": {},
+    "devDependencies": {},
+    "description": "Python application for slicing large images into small tiles",
+    "email": "info@mappedjs.de",
+    "engines": {
+        "node": "6.2.1",
+        "npm": "3.9.3"
+    },
+    "homepage": "http://mappedJS.de",
+    "keywords": [
+        "tiles",
+        "image",
+        "slice"
+    ],
+    "license": "BSD-2-Clause",
+    "readmeFilename": "README.md",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/MappedJS/image-slicer.git"
+    },
+    "version": "1.0.0"
+}
