@@ -88,7 +88,7 @@ def build_level(input_path, output, path, size, minsize, current_level):
 def create_thumb(img, data, path, current_level):
     outfile = "map_thumb_"+str(current_level)+".jpg"
     thumb_img = img
-    thumb_img.thumbnail((settings.thumbSize, settings.thumbSize), Image.ANTIALIAS)
+    thumb_img.thumbnail(((settings.thumbSize * thumb_img.width) / 100, (settings.thumbSize * thumb_img.height) / 100), Image.ANTIALIAS)
     thumb_img.save(settings.output + path + outfile, optimize=True, quality=75)
     data["thumb"] = path + outfile
 

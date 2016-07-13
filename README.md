@@ -44,9 +44,9 @@ $ python imageslicer.py -i image/foo-1.png -o image/dist/ -p img/ -t 512 -s 512 
     * description: minimum zoom of smallest image and maximum zoom of largest image
 ### -t or --thumbSize (optional)
     * type: integer
-    * default: 256
+    * default: 10
     * arguments: 1
-    * description: maximum width of thumbnail
+    * description: maximum width or height of thumbnail in percentage relative to original size
 ### -p or --path (optional)
     * type: string
     * default: ""
