@@ -21,8 +21,6 @@ def main():
 
         start = time.time()
 
-        print settings.zoom
-
         for i in range(len(settings.input)):
             current_level = settings.input[i]
             build_level(current_level, settings.output, settings.path, settings.size, settings.minsize, i)
@@ -70,9 +68,9 @@ def build_level(input_path, output, path, size, minsize, current_level):
     slices = calculate_slices(img, size, minsize)
 
     if settings.clearfolder:
-        os.system("rm -rf " + output)
+        os.system("rm -rf " + output + path)
 
-    create_output_path(output)
+    create_output_path(output + path)
 
     build_data_json(output, slices, path, data_in_current_level, current_level)
 
@@ -88,10 +86,10 @@ def build_level(input_path, output, path, size, minsize, current_level):
 
 
 def create_thumb(img, data, path, current_level):
-    outfile = "map_thumb_"+str(current_level)+"." + settings.extension
+    outfile = "map_thumb_"+str(current_level)+".jpg"
     thumb_img = img
     thumb_img.thumbnail((settings.thumbSize, settings.thumbSize), Image.ANTIALIAS)
-    thumb_img.save(settings.output + outfile, optimize=True)
+    thumb_img.save(settings.output + path + outfile, optimize=True)
     data["thumb"] = path + outfile
 
 
@@ -185,7 +183,7 @@ def calculate_slices_normal(width, height, size, x_remainder, y_remainder, small
 
 def crop_save(image, box, x, y, current_level):
     cropped_img = image.crop(box)
-    cropped_img.save(settings.output + "map_"+str(current_level)+"_"+str(y)+"_"+str(x)+"."+settings.extension, optimize=True)
+    cropped_img.save(settings.output + settings.path + "map_"+str(current_level)+"_"+str(y)+"_"+str(x)+"."+settings.extension, optimize=True)
 
 
 def open_image(file_name):
