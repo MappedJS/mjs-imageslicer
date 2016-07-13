@@ -21,6 +21,9 @@ def main():
 
         start = time.time()
 
+        if settings.clearfolder:
+            os.system("rm -rf " + settings.output)
+
         for i in range(len(settings.input)):
             current_level = settings.input[i]
             build_level(current_level, settings.output, settings.path, settings.size, settings.minsize, i)
@@ -66,9 +69,6 @@ def build_level(input_path, output, path, size, minsize, current_level):
     last_image = data_in_current_level
 
     slices = calculate_slices(img, size, minsize)
-
-    if settings.clearfolder:
-        os.system("rm -rf " + output + path)
 
     create_output_path(output + path)
 
