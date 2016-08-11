@@ -202,7 +202,7 @@ def init_settings():
     parser.add_argument('-s', '--size', help='size of a tile', default=512, type=int)
     parser.add_argument('-m', '--minsize', help='minimum size of a tile', default=128, type=int)
     parser.add_argument('-z', '--zoom', help='minimum and maximum zoom level', default=[0.8, 1.2], type=float, nargs=2)
-    parser.add_argument('-t', '--thumbSize', help='size of thumbnail', default=256, type=int)
+    parser.add_argument('-t', '--thumbSize', help='size of thumbnail', default=10, type=int)
     parser.add_argument('-p', '--path', help='additional path information for relative paths', default="", type=str)
     parser.add_argument('-c', '--clearfolder', help='empties output folder', default=False, type=bool)
     parser.add_argument('-e', '--extension', help='file type', default="jpg", type=str)
