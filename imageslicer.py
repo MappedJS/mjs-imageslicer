@@ -28,7 +28,7 @@ def main():
         end = time.time()
         elapsed = end - start
 
-        with open(settings.output + 'mapData.json', 'w') as f:
+        with open(settings.output + 'tilesData.json', 'w') as f:
             json.dump(json_data, f)
 
         print("-> Finished in: %.2fs" % round(elapsed, 2))
